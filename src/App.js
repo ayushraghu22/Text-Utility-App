@@ -1,13 +1,25 @@
 import './App.css';
+import About from './components/About';
 import Navbar from './components/Navbar';
+import TextForm from './components/TextForm';
 
 function App() {
   return (
     // JSX fragments <> .... </>
     <>
 
-      {/* <Navbar title="TextUtils" About="About"/> */}
-      <Navbar />
+      <Navbar title="TextUtils" About="About" />
+      {/* <Navbar /> */}
+
+      <div className="container my-4">
+        <TextForm heading="Enter your Text" />
+      </div>
+
+      <div className="container my-3">
+        <About/>
+      </div>
+
+
 
     </>
 
