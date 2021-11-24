@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react'
+import Alert from './components/Alert';
 
 
 function App() {
@@ -12,12 +13,28 @@ function App() {
     if (mode === 'light') {
       setMode("dark");
       document.body.style.backgroundColor = 'rgb(48 72 109)';
+      showAlert("success", "Dark Mode enabled.");
     }
     else {
       setMode("light");
       document.body.style.backgroundColor = 'white';
+      showAlert("success", "Light Mode enabled.");
     };
   }
+
+  const [alert, setAlert] = useState(null);
+
+  let showAlert = (type, message) => {
+    setAlert({
+      message: message,
+      type: type
+    });
+
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
+  }
+
 
   return (
     // JSX fragments <> .... </>
@@ -26,8 +43,10 @@ function App() {
       <Navbar title="TextUtils" About="About" mode={mode} toggleMode={toggleMode} />
       {/* <Navbar /> */}
 
+      <Alert alert={alert} />
+
       <div className="container my-4">
-        <TextForm heading="Enter your Text" mode={mode} />
+        <TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} />
       </div>
 
       {/* <div className="container my-3">

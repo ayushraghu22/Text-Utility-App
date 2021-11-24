@@ -30,6 +30,7 @@ export default function TextForm(props) {
         // navigator.clipboard.writeText(copyText.value);
 
         navigator.clipboard.writeText(text);
+        props.showAlert("success", "Text copied  to clipboard.")
     }
 
     const CapitalizeCase = () => {
