@@ -80,6 +80,7 @@ export default function TextForm(props) {
                         color: props.mode === 'light' ? 'black' : 'white'
                     }} value={text} onChange={handleOnChange} rows="8"></textarea>
                 </div>
+                
                 <button className="btn btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
                 <button className="btn btn-primary mx-1" onClick={handleDownClick}>Convert to Lowercase</button>
                 <button className="btn btn-primary" onClick={CapitalizeCase}>Capitalize Case</button>

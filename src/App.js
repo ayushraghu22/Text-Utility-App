@@ -6,15 +6,14 @@ import React, { useState } from 'react'
 
 
 function App() {
-
   const [mode, setMode] = useState('light');
 
   const toggleMode = () => {
     if (mode === 'light') {
-      setMode("dark"); 
+      setMode("dark");
       document.body.style.backgroundColor = 'rgb(48 72 109)';
     }
-    else { 
+    else {
       setMode("light");
       document.body.style.backgroundColor = 'white';
     };
@@ -28,13 +27,12 @@ function App() {
       {/* <Navbar /> */}
 
       <div className="container my-4">
-        <TextForm heading="Enter your Text" mode={mode}/>
+        <TextForm heading="Enter your Text" mode={mode} />
       </div>
 
       {/* <div className="container my-3">
         <About />
       </div> */}
-
 
 
     </>
@@ -68,5 +66,5 @@ export default App;
 7. we can return only one element in JSX.
 
 
-8. In JSX style(CSS) is set using js objects.
+8. In JSX, style(CSS) is set using js objects.
  */
