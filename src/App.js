@@ -14,11 +14,13 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = 'rgb(48 72 109)';
       showAlert("success", "Dark Mode enabled.");
+      // document.title = "TextUtils - Dark mode";
     }
     else {
       setMode("light");
       document.body.style.backgroundColor = 'white';
       showAlert("success", "Light Mode enabled.");
+      // document.title = "TextUtils - Light mode";
     };
   }
 
@@ -33,6 +35,11 @@ function App() {
     setTimeout(() => {
       setAlert(null);
     }, 2000);
+  }
+
+  const [bgcolor, setBgColor] = useState('rgb(48 72 109)');
+  let setBackground = (color)=>{
+    setBgColor(color);
   }
 
 
