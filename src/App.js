@@ -54,8 +54,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} />}>
           </Route>
+          {/* <TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} /> */}
 
-          <Route exact path="/About" element={<About mode={mode}/>}>
+          <Route exact path="/About" element={<About mode={mode} />}>
           </Route>
 
         </Routes>
@@ -96,4 +97,5 @@ export default App;
 8. In JSX, style(CSS) is set using js objects.
 
 9. In react-router use exact keyword as react do partial matching.
+10. CLS - cumulative layout shift.
  */
