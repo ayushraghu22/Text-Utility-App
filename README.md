@@ -1,3 +1,6 @@
+A Text Util website made using React.    
+<a href="https://ayushraghu22.github.io/Text-Utility-App/index.html#">Click here</a> to see project in action. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
