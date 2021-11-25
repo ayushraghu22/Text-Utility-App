@@ -7,4 +7,4 @@ function square(x){
 }
 
 export default c;
-export {a,b,square};
+export {a,b,square} ;
