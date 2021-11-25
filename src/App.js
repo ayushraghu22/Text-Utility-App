@@ -1,9 +1,15 @@
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react'
 import Alert from './components/Alert';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 
 function App() {
@@ -37,29 +43,24 @@ function App() {
     }, 2000);
   }
 
-  const [bgcolor, setBgColor] = useState('rgb(48 72 109)');
-  let setBackground = (color)=>{
-    setBgColor(color);
-  }
-
-
   return (
     // JSX fragments <> .... </>
     <>
+      <Router>
+        <Navbar title="TextUtils" About="About" mode={mode} toggleMode={toggleMode} />
+        {/* <Navbar /> */}
+        <Alert alert={alert} />
 
-      <Navbar title="TextUtils" About="About" mode={mode} toggleMode={toggleMode} />
-      {/* <Navbar /> */}
+        <Routes>
+          <Route exact path="/" element={<TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} />}>
+          </Route>
 
-      <Alert alert={alert} />
+          <Route exact path="/About" element={<About mode={mode}/>}>
+          </Route>
 
-      <div className="container my-4">
-        <TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} />
-      </div>
+        </Routes>
 
-      {/* <div className="container my-3">
-        <About />
-      </div> */}
-
+      </Router>
 
     </>
 
@@ -93,4 +94,6 @@ export default App;
 
 
 8. In JSX, style(CSS) is set using js objects.
+
+9. In react-router use exact keyword as react do partial matching.
  */

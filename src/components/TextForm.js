@@ -30,7 +30,7 @@ export default function TextForm(props) {
         // navigator.clipboard.writeText(copyText.value);
 
         navigator.clipboard.writeText(text);
-        props.showAlert("success", "Text copied  to clipboard.")
+        props.showAlert("success", "Text copied to clipboard.")
     }
 
     const CapitalizeCase = () => {
@@ -73,7 +73,7 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className="container" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
+            <div className="container my-4" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
                     <textarea className="form-control" id="myBox" style={{
