@@ -2,8 +2,8 @@ import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import React, { useState } from 'react'
 import Alert from './components/Alert';
+import React, { useState } from 'react'
 
 import {
   BrowserRouter as Router,
@@ -47,7 +47,7 @@ function App() {
     // JSX fragments <> .... </>
     <>
       <Router>
-        <Navbar title="TextUtils" About="About" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="TextUtils" about="About" mode={mode} toggleMode={toggleMode} />
         {/* <Navbar /> */}
         <Alert alert={alert} />
 
@@ -60,9 +60,7 @@ function App() {
           </Route>
 
         </Routes>
-
       </Router>
-
     </>
 
   );
@@ -98,4 +96,5 @@ export default App;
 
 9. In react-router use exact keyword as react do partial matching.
 10. CLS - cumulative layout shift.
+11. document.getSelection().removeAllRanges(); (Textform -> de-highlight the text once copied).
  */

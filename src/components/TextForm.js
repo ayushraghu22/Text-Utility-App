@@ -83,7 +83,7 @@ export default function TextForm(props) {
                     }} value={text} onChange={handleOnChange} rows="8"></textarea>
                 </div>
 
-                <button disabled={text.trim().length === 0} className="btn btn-primary my-1" onClick=       {handleUpClick}>Convert to Uppercase</button>
+                <button disabled={text.trim().length === 0} className="btn btn-primary my-1" onClick={handleUpClick}>Convert to Uppercase</button>
                 <button disabled={text.trim().length === 0} className="btn btn-primary mx-1" my-1 onClick={handleDownClick}>Convert to Lowercase</button>
                 <button disabled={text.trim().length === 0} className="btn btn-primary my-1" onClick={CapitalizeCase}>Capitalize Case</button>
                 <button disabled={text.trim().length === 0} className="btn btn-primary mx-1 my-1" onClick={handleTrim}>Remove extra space</button>
