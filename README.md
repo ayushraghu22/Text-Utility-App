@@ -1,5 +1,5 @@
 A Text Util website made using React.    
-<a href="https://ayushraghu22.github.io/Text-Utility-App/index.html#">Click here</a> to see project in action. 
+<a href="https://ayushraghu22.github.io/Text-Utility-App/">Click here</a> to see project in action. 
 
 # Getting Started with Create React App
 
