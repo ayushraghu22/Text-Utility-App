@@ -11,23 +11,42 @@ import {
   Routes,
 } from "react-router-dom";
 
+let removeBg = () => {
+  document.body.classList.remove('bg-primary');
+  document.body.classList.remove('bg-secondary');
+  document.body.classList.remove('bg-success');
+  document.body.classList.remove('bg-warning');
+  document.body.classList.remove('bg-danger');
+}
+
 
 function App() {
   const [mode, setMode] = useState('light');
+  const [nav, setNav] = useState('none');
 
-  const toggleMode = () => {
-    if (mode === 'light') {
-      setMode("dark");
-      document.body.style.backgroundColor = 'rgb(48 72 109)';
-      showAlert("success", "Dark Mode enabled.");
-      // document.title = "TextUtils - Dark mode";
+  const toggleMode = (clr) => {
+    removeBg();
+    
+    if (clr != 'none') { 
+      document.body.classList.add('bg-' + clr); 
+      setNav('dark');
     }
+
     else {
-      setMode("light");
-      document.body.style.backgroundColor = 'white';
-      showAlert("success", "Light Mode enabled.");
-      // document.title = "TextUtils - Light mode";
-    };
+      setNav('none');
+      if (mode === 'light') {
+        setMode("dark");
+        document.body.style.backgroundColor = 'rgb(48 72 109)';
+        showAlert("success", "Dark Mode enabled.");
+        // document.title = "TextUtils - Dark mode";
+      }
+      else {
+        setMode("light");
+        document.body.style.backgroundColor = 'white';
+        showAlert("success", "Light Mode enabled.");
+        // document.title = "TextUtils - Light mode";
+      };
+    }
   }
 
   const [alert, setAlert] = useState(null);
@@ -40,14 +59,14 @@ function App() {
 
     setTimeout(() => {
       setAlert(null);
-    }, 2000);
+    }, 1500);
   }
 
   return (
     // JSX fragments <> .... </>
     <>
       <Router>
-        <Navbar title="TextUtils" about="About" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="TextUtils" about="About" nav={nav} mode={mode} toggleMode={toggleMode} />
         {/* <Navbar /> */}
         <Alert alert={alert} />
 
@@ -97,4 +116,6 @@ export default App;
 9. In react-router use exact keyword as react do partial matching.
 10. CLS - cumulative layout shift.
 11. document.getSelection().removeAllRanges(); (Textform -> de-highlight the text once copied).
+12. 'onclick' needs a functin not a function call.
+      eg. {toggleMode} , not {toggleMode()};
  */
