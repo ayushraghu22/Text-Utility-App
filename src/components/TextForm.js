@@ -24,16 +24,6 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
 
-    const CopyToClipboard = () => {
-        // var copyText = document.getElementById("myInput");
-        // copyText.select();
-        // navigator.clipboard.writeText(copyText.value);
-
-        navigator.clipboard.writeText(text);
-        document.getSelection().removeAllRanges();
-        props.showAlert("success", "Text copied to clipboard.");
-    }
-
     const CapitalizeCase = () => {
 
         let temp = text.split(' ');
@@ -43,7 +33,20 @@ export default function TextForm(props) {
         setText(temp.join(' '));
     }
 
+    const CopyToClipboard = () => {
+        // var copyText = document.getElementById("myInput");
+        // copyText.select();
+        // navigator.clipboard.writeText(copyText.value);
+        // document.getSelection().removeAllRanges();
+
+        navigator.clipboard.writeText(text);
+        props.showAlert("success", "Text copied to clipboard.");
+    }
+
     const handleTrim = () => {
+
+        // let temp = text.split(' ').filter((element) => { return element.length !== 0 });
+        // setText(temp.join(' '));
 
         let temp = text.split(' ');
         let str = "";
@@ -95,6 +98,7 @@ export default function TextForm(props) {
             <div className="container my-4" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
                 <h3>Your text summary :</h3>
                 <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p>
+                {/* <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p> */}
                 <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} word count</p>
 
                 <h3>Preview:</h3>
@@ -111,3 +115,10 @@ TextForm.propTypes = {
 TextForm.defaultProps = {
     heading: "Enter heading"
 }
+
+// javascript-> Regular expressions to see....line no 98.
+// index.css mein after invert(1);
+
+// react does not watch all the variables thats why we use state
+// so that changes can be made immediately widhout delay wherever
+// state is used.

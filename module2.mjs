@@ -6,5 +6,5 @@ function square(x){
     return x*x;
 }
 
+export {a,b,square};
 export default c;
-export {a,b,square} ;

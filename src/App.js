@@ -27,7 +27,7 @@ function App() {
   const toggleMode = (clr) => {
     removeBg();
     
-    if (clr != 'none') { 
+    if (clr !== 'none') { 
       document.body.classList.add('bg-' + clr); 
       setNav('dark');
     }
@@ -91,7 +91,7 @@ export default App;
 
 /*
 
-1. JSX is is simply a syntax extension of JavaScript. It allows us to directly write HTML
+1. JSX is simply a syntax extension of JavaScript. It allows us to directly write HTML
    in React (within JavaScript code)
     class changes to className.(as class is reserved keyword in JS)
     for to htmlFor (as for is reserved keyword in JS)
