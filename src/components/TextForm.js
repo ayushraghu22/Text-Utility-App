@@ -97,9 +97,9 @@ export default function TextForm(props) {
 
             <div className="container my-4" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
                 <h3>Your text summary :</h3>
-                <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p>
-                {/* <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p> */}
-                <p>{0.008 * text.split(" ").filter((element) => { return element.length !== 0 }).length} word count</p>
+                {/* <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p> */}
+                <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p>
+                <p>{0.008 * text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} word count</p>
 
                 <h3>Preview:</h3>
                 <p>{text.trim().length !== 0 ? text : 'Nothing to preview'}</p>
@@ -116,7 +116,7 @@ TextForm.defaultProps = {
     heading: "Enter heading"
 }
 
-// javascript-> Regular expressions to see....line no 98.
+// javascript-> Regular expressions to see.  line no 98.   .....done.....
 // index.css mein after invert(1);
 
 // react does not watch all the variables thats why we use state
