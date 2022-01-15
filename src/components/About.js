@@ -7,6 +7,7 @@ export default function About(props) {
     //     backgroundColor: 'white'
     // });
 
+    document.title = `TextUtils - ${props.category}`;
     let myStyle = {
         color: props.mode === 'light' ? 'black' : 'white',
         backgroundColor: props.mode === 'light' ? 'white' : 'rgb(1 14 33 / 83%)',
@@ -34,9 +35,8 @@ export default function About(props) {
     //     }
     // }
 
-
     return (
-        <div className="container my-3" style={{color: props.mode ==='light' ? 'black':'white'}}>
+        <div className="container my-3" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
             <div className="accordion my-3" id="accordionExample" >
                 <h1 className="my-3">About Us</h1>
                 <div className="accordion-item">
@@ -55,7 +55,7 @@ export default function About(props) {
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingTwo">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
-                        style={myStyle}>
+                            style={myStyle}>
                             Accordion Item #2
                         </button>
                     </h2>

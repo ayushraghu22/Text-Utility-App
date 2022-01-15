@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 export default function TextForm(props) {
     const [text, setText] = useState("");
+    document.title = `TextUtils - ${props.category}`;   
 
     const handleUpClick = () => {
         // let temp = text.toUpperCase();
@@ -25,7 +26,6 @@ export default function TextForm(props) {
     }
 
     const CapitalizeCase = () => {
-
         let temp = text.split(' ');
         for (let i = 0; i < temp.length; i++) {
             temp[i] = temp[i].charAt(0).toUpperCase() + temp[i].substr(1);
@@ -75,6 +75,7 @@ export default function TextForm(props) {
         setText(temp.join(' '));
     }
 
+
     return (
         <>
             <div className="container my-4" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
@@ -98,7 +99,9 @@ export default function TextForm(props) {
             <div className="container my-4" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
                 <h3>Your text summary :</h3>
                 {/* <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p> */}
+
                 <p>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.trim().length} characters</p>
+
                 <p>{0.008 * text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} word count</p>
 
                 <h3>Preview:</h3>

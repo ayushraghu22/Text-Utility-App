@@ -66,16 +66,16 @@ function App() {
     // JSX fragments <> .... </>
     <>
       <Router>
-        <Navbar title="TextUtils" about="About" nav={nav} mode={mode} toggleMode={toggleMode} />
+        <Navbar title="TextUtils" about="About" nav={nav} mode={mode} toggleMode={toggleMode} category="Home" />
         {/* <Navbar /> */}
         <Alert alert={alert} />
 
         <Routes>
-          <Route exact path="/" element={<TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} />}>
+          <Route exact path="/" element={<TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} category="Home" />}>
           </Route>
           {/* <TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} /> */}
 
-          <Route exact path="/About" element={<About mode={mode} />}>
+          <Route exact path="/About" element={<About mode={mode} category="About" />}>
           </Route>
 
         </Routes>
