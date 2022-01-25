@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types' //impt
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Navbar(props) {
+
+    let location = useLocation();
+
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${props.nav === 'none' ? props.mode: props.nav} bg-${props.nav === 'none' ? props.mode: props.nav} shadow`}>
+        <nav className={`navbar navbar-expand-lg navbar-${props.nav === 'none' ? props.mode : props.nav} bg-${props.nav === 'none' ? props.mode : props.nav} shadow`}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">{props.title}</Link>
                 {/* <a className="navbar-brand" href="#">{props.title}</a> */}
@@ -14,11 +17,11 @@ export default function Navbar(props) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} aria-current="page" to="/">Home</Link>
                             {/* <a className="nav-link active" aria-current="page" href="#">Home</a> */}
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/About">{props.about}</Link>
+                            <Link className={`nav-link ${location.pathname === '/About' ? 'active' : ''}`} to="/About">{props.about}</Link>
                         </li>
                     </ul>
 
